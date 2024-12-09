@@ -1,0 +1,146 @@
+html, body {
+  height: 100%; /* Ensure the root and body cover 100% height */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  /* gap: 20px; */
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+#followers-list,#Users-list{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.followers-list,
+.users-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) */
+  border-right: 1px solid #dee2e6;
+  padding: 1px;
+}
+.users-list {
+  border-right: none;
+  border-left: 1px solid #dee2e6;
+}
+
+.tweet-container {
+  flex: 2;
+  padding: 10px;
+}
+
+h5 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.followername,
+.Username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.followers-list button {
+  background-color: #dc3545; /* Red for unfollow */
+  color: white;
+}
+
+.followers{
+  display: flex;
+  justify-content: center;
+}
+
+.users-list button {
+  background-color: #ffc107; /* Snapchat Yellow */
+  color: #212529;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.users-list button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.separator {
+  border-top: 1px solid #dee2e6;
+  margin: 10px 0;
+  width: 100%;
+}
+/* Feed list container */
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between feed boxes */
+  margin-top: 20px;
+}
+
+/* Individual feed box styling */
+.feed {
+  background-color: #fff; /* White background for the box */
+  padding: 20px; /* Add padding inside the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #dee2e6; /* Optional: Light border */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for feed title (tweet) */
+.feed_id {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Styling for posted by text */
+.postedby {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
