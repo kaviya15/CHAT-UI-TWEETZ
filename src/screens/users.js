@@ -36,7 +36,7 @@ export default function Users() {
             {" "}
             <div key={value.id} className="Users" id="users-list">
               <div className="username">{value.name}</div>
-              <button className="Users-list-button"> + follow </button>
+              <button className="Users-list-button">  Follow </button>
             </div>{" "}
             {index == userList.length - 1 ? (
               <></>

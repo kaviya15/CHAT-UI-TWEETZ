@@ -56,7 +56,7 @@ export default function Followers() {
                 className="followers-list-button"
               >
                 {" "}
-                - un follow{" "}
+                 Unfollow{" "}
               </button>
             </div>{" "}
             {index != followers_list.length - 1 ? (
