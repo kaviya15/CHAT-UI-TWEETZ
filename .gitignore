@@ -15,7 +15,10 @@
 .DS_Store
 .env.local
 .env.development.local
+<<<<<<< HEAD
 
+=======
+>>>>>>> e442aa7 (state context)
 .env.test.local
 .env.production.local
 
