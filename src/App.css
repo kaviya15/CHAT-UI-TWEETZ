@@ -1,9 +1,9 @@
-.container {
+.container,.login_screen {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
-.app-container {
+.app-container,.login_screen {
   display: flex;
 }
 
@@ -45,7 +45,16 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
+.login_screen{
+  display: flex;
+  flex-direction: column;
+  margin: 400px auto;
+  background-color: #fff; 
+   padding: 20px 50px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+   border-radius: 8px;
+   width: 500px;
+}
 /* Individual feed box styling */
 .feed {
   background-color: #fff; /* White background for the box */
