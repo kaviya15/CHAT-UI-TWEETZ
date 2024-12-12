@@ -2,7 +2,7 @@ import React , {useState} from "react";
 import "./App.css";
 import "./screens/login.css";
 import Homescreen from "./screens/homescreen";
-
+import axios from "axios";
 
 function App() {
 
@@ -13,7 +13,31 @@ function App() {
       set_login_username(e.target.value);
     };
     const handlelogin =()=>{
-      set_user_logged_in(true);
+      
+
+     axios
+       .post(
+         "http://localhost:8080/api/users",
+         {
+           id: 4,
+           name: login_username,
+         },
+         {
+           headers: {
+             "Content-Type": "application/json",
+           },
+         }
+       )
+       .then((response) => {
+         set_user_logged_in(true);
+         console.log(response.data);
+       })
+       .catch((error) => {
+         set_user_logged_in(false);
+         alert("Error creating user", error);
+         console.error("Error:", error);
+       });
+
     }
   return (
     <>
@@ -21,7 +45,7 @@ function App() {
         <Homescreen />
       ) : (
         <div className="wrapper">
-          <div className="text-center mt-4 name">TweetZ</div>
+          <div className="text-center mt-4 name">!App Name!</div>
           <div className="p-3 mt-3">
             <div className="form-field d-flex align-items-center">
               <span className="far fa-user"></span>
