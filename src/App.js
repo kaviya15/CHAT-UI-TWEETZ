@@ -1,47 +1,42 @@
-import React , {useState} from "react";
+import React, { useState, useContext } from "react";
 import "./App.css";
 import "./screens/login.css";
 import Homescreen from "./screens/homescreen";
 import axios from "axios";
+import { UserContext } from "./UserContext";
 
 function App() {
+  const { setUserId, setUserName } = useContext(UserContext); // Access setUserId from context
+  const [loginUsername, setLoginUsername] = useState("");
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
-    const [login_username, set_login_username] = useState("");
-    const [user_logged_in , set_user_logged_in] = useState(false);
+  const handleUsername = (e) => {
+    setLoginUsername(e.target.value);
+  };
 
-    const handleusername = (e) => {
-      set_login_username(e.target.value);
-    };
-    const handlelogin =()=>{
-      
+  const handleLogin = () => {
+    axios
+      .post(
+        "http://localhost:8080/api/users",
+        { name: loginUsername },
+        { headers: { "Content-Type": "application/json" } }
+      )
+      .then((response) => {
+        setUserLoggedIn(true);
+        setUserId(response.data.id); // Set user_id in context
+        setUserName(loginUsername);
+        console.log("Login successful:", response.data);
+      })
+      .catch((error) => {
+        setUserLoggedIn(false);
+        alert("Error logging in");
+        console.error("Error:", error);
+      });
+  };
 
-     axios
-       .post(
-         "http://localhost:8080/api/users",
-         {
-           id: 4,
-           name: login_username,
-         },
-         {
-           headers: {
-             "Content-Type": "application/json",
-           },
-         }
-       )
-       .then((response) => {
-         set_user_logged_in(true);
-         console.log(response.data);
-       })
-       .catch((error) => {
-         set_user_logged_in(false);
-         alert("Error creating user", error);
-         console.error("Error:", error);
-       });
-
-    }
   return (
     <>
-      {user_logged_in ? (
+      {userLoggedIn ? (
         <Homescreen />
       ) : (
         <div className="wrapper">
@@ -54,12 +49,12 @@ function App() {
                 name="userName"
                 id="userName"
                 placeholder="Username"
-                value={login_username}
-                onChange={handleusername}
+                value={loginUsername}
+                onChange={handleUsername}
               />
             </div>
 
-            <button onClick={handlelogin} className="btn mt-3">
+            <button onClick={handleLogin} className="btn mt-3">
               Login
             </button>
           </div>

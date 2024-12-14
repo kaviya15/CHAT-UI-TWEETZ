@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-#followers-list,
+#followers-list,.followings,
 #users-list {
   display: flex;
   flex-direction: row;
@@ -39,12 +39,19 @@ button {
 button:hover {
   opacity: 0.8;
 }
-.users-list button {
+#users-list button {
   background-color: #ffc107; /* Snapchat Yellow */
   color: #212529;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.followings button{
+  background-color: rgb(220, 53, 69);
+  color:#dee2e6
+}
+.display-list-ff{
+  padding-top: 40px;
+}
 .login_screen{
   display: flex;
   flex-direction: column;
@@ -83,4 +90,40 @@ button:hover {
 .post{
   background-color: rgb(0, 123, 255);
   color: white;
+}
+.display-list-uu{
+  padding: 30px;
+}
+.follow-div,.users-div{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.middle-layer{
+  width: 70%;
+}
+
+.right-layer{
+  padding: 70px;
+}
+
+.middle-layer {
+  width: 70%;
+  min-width: 500px; /* Ensure a minimum width to prevent shrinking */
+  max-width: 800px; /* Optional: Set a max width to control overall size */
+  flex-grow: 1; /* Allow it to grow proportionally within the flex container */
+  display: flex; /* Use flexbox to structure its child elements */
+  flex-direction: column; /* Stack content vertically if needed */
+  overflow-wrap: break-word; /* Ensure text breaks instead of causing overflow */
+}
+
+
+.tweet-container,
+.feed-container {
+  word-wrap: break-word;
+  overflow: hidden; /* Hide overflowing content */
+}
+.active-button {
+  background-color: #D3D3D3; /* Active background color */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Optional: shadow for effect */
 }
