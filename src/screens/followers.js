@@ -5,38 +5,7 @@ import React, { useEffect, useContext,useState } from "react";
 import { UserContext } from "../UserContext";
 export default function Followers() {
   const { userId } = useContext(UserContext);
-  const [followers_list, set_followers_list] = useState([
-    {
-      name: "Dimple",
-      user_id: 2,
-      follower_id: 1,
-      id: 1,
-    },
-    {
-      name: "Katheriene",
-      user_id: 3,
-      follower_id: 1,
-      id: 2,
-    },
-    {
-      name: "Caroline",
-      user_id: 4,
-      follower_id: 1,
-      id: 3,
-    },
-    {
-      name: "Diana",
-      user_id: 6,
-      follower_id: 1,
-      id: 4,
-    },
-    {
-      name: "Rose",
-      user_id: 8,
-      follower_id: 1,
-      id: 15,
-    },
-  ]);
+  const [followers_list, set_followers_list] = useState([]);
 
  
   useEffect(() => {

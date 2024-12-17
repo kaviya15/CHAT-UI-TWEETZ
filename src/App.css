@@ -6,7 +6,17 @@
 .app-container,.login_screen {
   display: flex;
 }
-
+.refresh_button{
+  background-color: #03A9F4;
+  float: right;
+  margin-bottom: 30px;
+}
+img{
+  width: 50%;
+}
+.no_new_not{
+  color: red;
+}
 .left-layer,
 .middle-layer,
 .right-layer {
@@ -45,9 +55,12 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.followings button{
+.followings button,.clear_all{
   background-color: rgb(220, 53, 69);
   color:#dee2e6
+}
+.clear_all{
+  margin-bottom: 10px;
 }
 .display-list-ff{
   padding-top: 40px;
@@ -73,6 +86,20 @@ button:hover {
   flex-direction: column;
   margin:40px;
 }
+.notification {
+  background-color: #fff; /* White background for the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #dee2e6; /* Optional: Light border */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.tag_name{
+  font-family: 'Agbalumo';
+  font-size: 20px;
+}
+
 
 .tweet_container{
   margin:40px;

@@ -30,6 +30,8 @@ export default function Homescreen() {
 
   return (
     <div className="container">
+
+      
       <div className="app-container">
         {/* Followers Section */}
         <div className="left-layer">

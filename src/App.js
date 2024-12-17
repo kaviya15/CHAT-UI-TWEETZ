@@ -40,7 +40,12 @@ function App() {
         <Homescreen />
       ) : (
         <div className="wrapper">
-          <div className="text-center mt-4 name">!App Name!</div>
+          <center>
+            <img src="./connect.png" alt="not found" /> <br />
+            <em className="text-center mt-4 name tag_name">
+              For an ever-evolving world
+            </em>
+          </center>
           <div className="p-3 mt-3">
             <div className="form-field d-flex align-items-center">
               <span className="far fa-user"></span>

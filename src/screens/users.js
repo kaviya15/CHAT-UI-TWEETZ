@@ -45,10 +45,10 @@ export default function Users() {
         return (
           <>
             {" "}
-            <div key={value.id} className="Users" id="users-list">
+            <div key={value.id} className={value.id} id="users-list">
               <div className="username">{value.name}</div>
               <button
-                onClick={()=>followUser(value.id)}
+                onClick={() => followUser(value.id)}
                 className="Users-list-button"
               >
                 {" "}
